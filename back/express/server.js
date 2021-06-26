@@ -33,12 +33,14 @@ router.get("/audio/*", async (req, res) => {
     { responseType: "arraybuffer" }
   );
 
-  res.writeHead(200, {
-    "Content-Type": "audio/mpeg",
-    "Content-Length": r.headers["content-length"],
-  });
+  // res.set({
+  //   "Content-Type": "audio/mpeg",
+  //   "Content-Length": r.data.byteLength, // does not work on netlify
+  // });
+  // res.end(r.data);
 
-  res.end(r.data);
+  const base64String = btoa(String.fromCharCode(...new Uint8Array(r.data)));
+  res.json({ audio: base64String });
 });
 
 app.use(ROOT_URL, router); // path must route to lambda

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "netlify-lambda build back/express"
+    "build": "netlify-lambda build back/express",
+    "back": "cd back && npm start"
   },
   "keywords": [],
   "author": "",
