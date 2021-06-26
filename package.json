@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "build": "netlify-lambda build back/express",
-    "back": "cd back && npm start"
+    "back": "cd back && npm start",
+    "front": "cd front && npm start"
   },
   "keywords": [],
   "author": "",

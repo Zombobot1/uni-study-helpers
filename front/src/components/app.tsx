@@ -95,14 +95,10 @@ async function writeText(dirHandle: any) {
   const uniDir = await dirHandle.getDirectoryHandle('uni-resources', { create: true });
 }
 
-async function loadImg(): Promise<ArrayBuffer> {
-  const img = await fetch('https://picsum.photos/2000/2000');
-  const arr = await img.arrayBuffer();
-  return arr;
-}
-
 async function loadMp3(): Promise<ArrayBuffer> {
-  const audio = await fetch('https://dictionary.cambridge.org/media/english/us_pron/e/eus/eus73/eus73647.mp3');
+  const audio = await fetch(
+    'https://trusting-kare-176990.netlify.app/.netlify/functions/server/audio/e/eus/eus73/eus73647.mp3',
+  );
   const arr = await audio.arrayBuffer();
   return arr;
 }
@@ -135,13 +131,6 @@ async function retrieveImageFromClipboardAsBlob(pasteEvent: ClipboardEvent): Pro
   return [URL.createObjectURL(image), image];
 }
 
-interface SP {
-  createText: (f: string, t: string) => Promise<void>;
-  createImage: (fn: string, i: ArrayBuffer) => Promise<string>;
-  readImage: (f: string) => Promise<string>;
-}
-function S({ createImage, createText, readImage }: SP) {}
-
 export function App() {
   const [img, setImg] = useState('');
   const [audio, setAudio] = useState('');
@@ -161,8 +150,8 @@ export function App() {
     // const i = await readImage('clipboard.png');
     // setImg(i);
     const buffer = await loadMp3();
-    setAudio(URL.createObjectURL(new Blob([buffer])));
-    await createAudio('test.mp3', buffer);
+    // setAudio(URL.createObjectURL(new Blob([buffer])));
+    // await createAudio('test.mp3', buffer);
     // await createText('text.txt', 'test');
   };
 
