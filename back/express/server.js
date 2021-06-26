@@ -39,8 +39,7 @@ router.get("/audio/*", async (req, res) => {
   // });
   // res.end(r.data);
 
-  const base64String = btoa(String.fromCharCode(...new Uint8Array(r.data)));
-  res.json({ audio: base64String });
+  res.json({ audio: r.data.toString("base64") });
 });
 
 app.use(ROOT_URL, router); // path must route to lambda
