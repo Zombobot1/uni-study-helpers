@@ -1,0 +1,3 @@
+[build]
+  command = "cd back && npm install && npm run build"
+  functions = "back/functions"

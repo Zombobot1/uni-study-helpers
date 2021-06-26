@@ -1,0 +1,25 @@
+{
+  "name": "uni-launcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "functions/server.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "netlify-lambda build express"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "got": "^9.6.0",
+    "netlify-lambda": "^1.6.3",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
