@@ -1,4 +1,4 @@
-const app = require("./functions/server");
+const app = require("./express/server");
 
 app.listen(5000, () =>
   console.log("Listening on http://localhost:5000/.netlify/functions/server/")
