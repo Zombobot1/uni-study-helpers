@@ -1,3 +1,4 @@
 [build]
   command = "cd back && npm i && cd .. && npm i && npm run build"
   functions = "back/functions"
+  publish = "back/functions"

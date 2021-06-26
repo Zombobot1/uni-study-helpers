@@ -1,8 +1,7 @@
 {
-  "name": "uni-launcher",
+  "name": "uni-study-helpers-back",
   "version": "1.0.0",
   "description": "",
-  "main": "functions/server.js",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -15,7 +14,6 @@
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",
     "got": "^9.6.0",
-    "netlify-lambda": "^1.6.3",
     "serverless-http": "^2.3.0"
   },
   "devDependencies": {
